@@ -2,6 +2,7 @@ package com.example.CheckrApplication.DAO;
 
 import com.example.CheckrApplication.enums.Role;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 

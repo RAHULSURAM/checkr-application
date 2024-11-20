@@ -15,6 +15,7 @@ import com.example.CheckrApplication.enums.Status;
 import com.example.CheckrApplication.exception.BadRequestException;
 import com.example.CheckrApplication.exception.ResourceNotFoundException;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -80,11 +81,17 @@ public class CandidateService {
         CandidateDAO candidate = candidateRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Candidate", "id", id));
         CandidateDetailResponseDTO response = new CandidateDetailResponseDTO();
-        response.setCandidate(modelMapperConfig.modelMapper().map(candidate, CandidateDTO.class));
+
+        ModelMapper mapper = modelMapperConfig.modelMapper();
+        if(mapper == null){
+            mapper = new ModelMapper();
+        }
+
+        response.setCandidate(mapper.map(candidate, CandidateDTO.class));
         // Assuming each candidate has one report for simplicity
         ReportDAO report = candidate.getReports().stream().findFirst().orElse(null);
         if(report != null) {
-            response.setReport(modelMapperConfig.modelMapper().map(report, ReportDTO.class));
+            response.setReport(mapper.map(report, ReportDTO.class));
             List<ViolationDTO> violations = report.getViolations()
                     .stream()
                     .map(v -> modelMapperConfig.modelMapper().map(v, ViolationDTO.class))
