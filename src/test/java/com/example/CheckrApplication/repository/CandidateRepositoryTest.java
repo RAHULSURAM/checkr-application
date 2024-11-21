@@ -81,6 +81,7 @@ class CandidateRepositoryTest {
 
     @Test
     void findAll_Specification_NoResults() {
+        candidateRepository.deleteAll();
         Specification<CandidateDAO> spec = (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("status"), Status.CONSIDER);
         Iterable<CandidateDAO> results = candidateRepository.findAll(spec);
         assertThat(results).isEmpty();
