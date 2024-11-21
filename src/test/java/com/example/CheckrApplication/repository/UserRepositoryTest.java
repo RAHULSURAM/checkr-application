@@ -27,7 +27,7 @@ import static org.mockito.Mockito.when;
 
 @DataJpaTest
 @ExtendWith(MockitoExtension.class)
-//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class UserRepositoryTest {
 
    @Autowired

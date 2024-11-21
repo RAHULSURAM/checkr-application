@@ -1461,3 +1461,266 @@ java.lang.IllegalStateException: ApplicationContext failure threshold (1) exceed
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) ~[junit-rt.jar:na]
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) ~[junit-rt.jar:na]
 
+2024-11-21T11:53:07.061+05:30  INFO 2733442 --- [CheckrApplication] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 44 class path changes (0 additions, 43 deletions, 1 modification)
+2024-11-21T11:53:07.077+05:30  INFO 2733442 --- [CheckrApplication] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T11:53:07.079+05:30  INFO 2733442 --- [CheckrApplication] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-11-21T11:53:07.098+05:30  INFO 2733442 --- [CheckrApplication] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-11-21T11:53:07.285+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Starting CheckrApplication using Java 23.0.1 with PID 2733442 (/home/rahs/Documents/CheckrApplication/target/classes started by rahs in /home/rahs/Documents/CheckrApplication)
+2024-11-21T11:53:07.286+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T11:53:07.618+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T11:53:07.621+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-11-21T11:53:07.931+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-21T11:53:07.937+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-21T11:53:07.937+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-21T11:53:07.963+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-21T11:53:07.963+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 670 ms
+2024-11-21T11:53:07.988+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-11-21T11:53:07.988+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-11-21T11:53:08.093+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T11:53:08.098+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T11:53:08.131+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T11:53:08.135+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2024-11-21T11:53:08.174+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@23c225d0
+2024-11-21T11:53:08.174+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2024-11-21T11:53:08.244+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T11:53:08.310+05:30  WARN 2733442 --- [CheckrApplication] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-21T11:53:08.355+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2024-11-21T11:53:08.438+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-11-21T11:53:08.454+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-21T11:53:08.460+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-21T11:53:08.538+05:30  WARN 2733442 --- [CheckrApplication] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ca4b09d5-17aa-4e31-a47a-b45b40f12308
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-21T11:53:08.540+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-11-21T11:53:08.606+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-21T11:53:08.621+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-21T11:53:08.625+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Started CheckrApplication in 1.397 seconds (process running for 8842.155)
+2024-11-21T11:53:08.627+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2024-11-21T11:53:11.815+05:30  INFO 2733442 --- [CheckrApplication] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 43 class path changes (43 additions, 0 deletions, 0 modifications)
+2024-11-21T11:53:11.819+05:30  INFO 2733442 --- [CheckrApplication] [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T11:53:11.821+05:30  INFO 2733442 --- [CheckrApplication] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2024-11-21T11:53:11.840+05:30  INFO 2733442 --- [CheckrApplication] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2024-11-21T11:53:11.978+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Starting CheckrApplication using Java 23.0.1 with PID 2733442 (/home/rahs/Documents/CheckrApplication/target/classes started by rahs in /home/rahs/Documents/CheckrApplication)
+2024-11-21T11:53:11.978+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T11:53:12.248+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T11:53:12.284+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 5 JPA repository interfaces.
+2024-11-21T11:53:12.516+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-21T11:53:12.518+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-21T11:53:12.518+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-21T11:53:12.541+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-21T11:53:12.542+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 561 ms
+2024-11-21T11:53:12.631+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T11:53:12.635+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T11:53:12.665+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T11:53:12.668+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2024-11-21T11:53:12.702+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@6213d6bc
+2024-11-21T11:53:12.703+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2024-11-21T11:53:13.375+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T11:53:13.536+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, jwtAuthenticationFilter urls=[/*] order=2147483647
+2024-11-21T11:53:13.536+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2024-11-21T11:53:13.580+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-21T11:53:13.581+05:30  WARN 2733442 --- [CheckrApplication] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-21T11:53:13.717+05:30  WARN 2733442 --- [CheckrApplication] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-21T11:53:13.748+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-11-21T11:53:13.783+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-11-21T11:53:13.838+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-21T11:53:13.847+05:30 DEBUG 2733442 --- [CheckrApplication] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-21T11:53:13.947+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-21T11:53:13.959+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-21T11:53:13.971+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Started CheckrApplication in 2.023 seconds (process running for 8847.502)
+2024-11-21T11:53:13.974+05:30  INFO 2733442 --- [CheckrApplication] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' filterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' customUserDetailsService and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' authenticationProvider (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2024-11-21T11:53:33.555+05:30  INFO 2776807 --- [CheckrApplication] [main] c.e.C.r.CandidateRepositoryTest          : Starting CandidateRepositoryTest using Java 23.0.1 with PID 2776807 (started by rahs in /home/rahs/Documents/CheckrApplication)
+2024-11-21T11:53:33.559+05:30  INFO 2776807 --- [CheckrApplication] [main] c.e.C.r.CandidateRepositoryTest          : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T11:53:34.245+05:30  INFO 2776807 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T11:53:34.354+05:30  INFO 2776807 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 5 JPA repository interfaces.
+2024-11-21T11:53:34.972+05:30  INFO 2776807 --- [CheckrApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T11:53:35.080+05:30  INFO 2776807 --- [CheckrApplication] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-21T11:53:35.134+05:30  INFO 2776807 --- [CheckrApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T11:53:35.329+05:30  INFO 2776807 --- [CheckrApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T11:53:35.372+05:30  INFO 2776807 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-21T11:53:35.874+05:30  INFO 2776807 --- [CheckrApplication] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7884f722
+2024-11-21T11:53:35.876+05:30  INFO 2776807 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-21T11:53:37.491+05:30  INFO 2776807 --- [CheckrApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T11:53:38.267+05:30  INFO 2776807 --- [CheckrApplication] [main] c.e.C.r.CandidateRepositoryTest          : Started CandidateRepositoryTest in 5.495 seconds (process running for 8.723)
+2024-11-21T11:53:39.334+05:30  INFO 2776807 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T11:53:39.337+05:30  INFO 2776807 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-21T11:53:39.349+05:30  INFO 2776807 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-21T12:51:20.678+05:30  INFO 2813551 --- [CheckrApplication] [main] c.e.C.CheckrApplicationTests             : Starting CheckrApplicationTests using Java 23.0.1 with PID 2813551 (started by rahs in /home/rahs/Documents/CheckrApplication)
+2024-11-21T12:51:20.681+05:30  INFO 2813551 --- [CheckrApplication] [main] c.e.C.CheckrApplicationTests             : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T12:51:20.742+05:30 DEBUG 2813551 --- [CheckrApplication] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2024293c
+2024-11-21T12:51:21.940+05:30  INFO 2813551 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T12:51:22.043+05:30  INFO 2813551 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 5 JPA repository interfaces.
+2024-11-21T12:51:22.913+05:30  INFO 2813551 --- [CheckrApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T12:51:23.018+05:30  INFO 2813551 --- [CheckrApplication] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-21T12:51:23.109+05:30  INFO 2813551 --- [CheckrApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T12:51:23.645+05:30  INFO 2813551 --- [CheckrApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T12:51:23.703+05:30  INFO 2813551 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-21T12:51:24.248+05:30  INFO 2813551 --- [CheckrApplication] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@210635fd
+2024-11-21T12:51:24.251+05:30  INFO 2813551 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-21T12:51:26.154+05:30  INFO 2813551 --- [CheckrApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T12:51:26.764+05:30  INFO 2813551 --- [CheckrApplication] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-21T12:51:26.765+05:30  WARN 2813551 --- [CheckrApplication] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-21T12:51:26.919+05:30  WARN 2813551 --- [CheckrApplication] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-21T12:51:27.143+05:30 DEBUG 2813551 --- [CheckrApplication] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-11-21T12:51:27.365+05:30 DEBUG 2813551 --- [CheckrApplication] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-11-21T12:51:27.679+05:30 DEBUG 2813551 --- [CheckrApplication] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-21T12:51:27.739+05:30 DEBUG 2813551 --- [CheckrApplication] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-21T12:51:27.997+05:30  INFO 2813551 --- [CheckrApplication] [main] c.e.C.CheckrApplicationTests             : Started CheckrApplicationTests in 7.901 seconds (process running for 9.615)
+2024-11-21T12:51:28.695+05:30 DEBUG 2813551 --- [CheckrApplication] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@2024293c, started on Thu Nov 21 12:51:20 IST 2024
+2024-11-21T12:51:28.700+05:30  INFO 2813551 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T12:51:28.703+05:30  INFO 2813551 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-21T12:51:28.714+05:30  INFO 2813551 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-21T12:52:14.888+05:30  INFO 2813932 --- [CheckrApplication] [main] c.e.C.CheckrApplicationTests             : Starting CheckrApplicationTests using Java 23.0.1 with PID 2813932 (started by rahs in /home/rahs/Documents/CheckrApplication)
+2024-11-21T12:52:14.891+05:30  INFO 2813932 --- [CheckrApplication] [main] c.e.C.CheckrApplicationTests             : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T12:52:14.949+05:30 DEBUG 2813932 --- [CheckrApplication] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2024293c
+2024-11-21T12:52:16.129+05:30  INFO 2813932 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T12:52:16.247+05:30  INFO 2813932 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 5 JPA repository interfaces.
+2024-11-21T12:52:17.168+05:30  INFO 2813932 --- [CheckrApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T12:52:17.245+05:30  INFO 2813932 --- [CheckrApplication] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-21T12:52:17.320+05:30  INFO 2813932 --- [CheckrApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T12:52:17.815+05:30  INFO 2813932 --- [CheckrApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T12:52:17.867+05:30  INFO 2813932 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-21T12:52:18.386+05:30  INFO 2813932 --- [CheckrApplication] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@210635fd
+2024-11-21T12:52:18.389+05:30  INFO 2813932 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-21T12:52:20.126+05:30  INFO 2813932 --- [CheckrApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T12:52:20.792+05:30  INFO 2813932 --- [CheckrApplication] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-21T12:52:20.794+05:30  WARN 2813932 --- [CheckrApplication] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-21T12:52:20.960+05:30  WARN 2813932 --- [CheckrApplication] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-21T12:52:21.210+05:30 DEBUG 2813932 --- [CheckrApplication] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-11-21T12:52:21.424+05:30 DEBUG 2813932 --- [CheckrApplication] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-11-21T12:52:21.739+05:30 DEBUG 2813932 --- [CheckrApplication] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-21T12:52:21.795+05:30 DEBUG 2813932 --- [CheckrApplication] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-21T12:52:22.076+05:30  INFO 2813932 --- [CheckrApplication] [main] c.e.C.CheckrApplicationTests             : Started CheckrApplicationTests in 7.781 seconds (process running for 9.56)
+2024-11-21T12:52:22.791+05:30 DEBUG 2813932 --- [CheckrApplication] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@2024293c, started on Thu Nov 21 12:52:14 IST 2024
+2024-11-21T12:52:22.796+05:30  INFO 2813932 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T12:52:22.799+05:30  INFO 2813932 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-21T12:52:22.810+05:30  INFO 2813932 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-21T12:52:34.730+05:30  INFO 2814117 --- [CheckrApplication] [main] c.e.C.r.CandidateRepositoryTest          : Starting CandidateRepositoryTest using Java 23.0.1 with PID 2814117 (started by rahs in /home/rahs/Documents/CheckrApplication)
+2024-11-21T12:52:34.733+05:30  INFO 2814117 --- [CheckrApplication] [main] c.e.C.r.CandidateRepositoryTest          : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T12:52:35.373+05:30  INFO 2814117 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T12:52:35.508+05:30  INFO 2814117 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 5 JPA repository interfaces.
+2024-11-21T12:52:36.029+05:30  INFO 2814117 --- [CheckrApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T12:52:36.140+05:30  INFO 2814117 --- [CheckrApplication] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-21T12:52:36.205+05:30  INFO 2814117 --- [CheckrApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T12:52:36.433+05:30  INFO 2814117 --- [CheckrApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T12:52:36.480+05:30  INFO 2814117 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-21T12:52:37.013+05:30  INFO 2814117 --- [CheckrApplication] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6ad112de
+2024-11-21T12:52:37.015+05:30  INFO 2814117 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-21T12:52:38.694+05:30  INFO 2814117 --- [CheckrApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T12:52:39.262+05:30  INFO 2814117 --- [CheckrApplication] [main] c.e.C.r.CandidateRepositoryTest          : Started CandidateRepositoryTest in 5.289 seconds (process running for 8.782)
+2024-11-21T12:52:41.088+05:30  INFO 2814117 --- [CheckrApplication] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.CheckrApplication.repository.ReportRepositoryTest]: ReportRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-21T12:52:41.120+05:30  INFO 2814117 --- [CheckrApplication] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.CheckrApplication.CheckrApplication for test class com.example.CheckrApplication.repository.ReportRepositoryTest
+2024-11-21T12:52:41.175+05:30  INFO 2814117 --- [CheckrApplication] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.CheckrApplication.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-21T12:52:41.192+05:30  INFO 2814117 --- [CheckrApplication] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.CheckrApplication.CheckrApplication for test class com.example.CheckrApplication.repository.UserRepositoryTest
+2024-11-21T12:52:42.376+05:30  INFO 2814117 --- [CheckrApplication] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.CheckrApplication.CheckrApplicationTests]: CheckrApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-11-21T12:52:42.385+05:30  INFO 2814117 --- [CheckrApplication] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.CheckrApplication.CheckrApplication for test class com.example.CheckrApplication.CheckrApplicationTests
+2024-11-21T12:52:42.401+05:30  INFO 2814117 --- [CheckrApplication] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-11-21T12:52:42.448+05:30  INFO 2814117 --- [CheckrApplication] [main] c.e.C.CheckrApplicationTests             : Starting CheckrApplicationTests using Java 23.0.1 with PID 2814117 (started by rahs in /home/rahs/Documents/CheckrApplication)
+2024-11-21T12:52:42.448+05:30  INFO 2814117 --- [CheckrApplication] [main] c.e.C.CheckrApplicationTests             : No active profile set, falling back to 1 default profile: "default"
+2024-11-21T12:52:42.451+05:30 DEBUG 2814117 --- [CheckrApplication] [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@373e09c7
+2024-11-21T12:52:42.979+05:30  INFO 2814117 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-21T12:52:42.995+05:30  INFO 2814117 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 5 JPA repository interfaces.
+2024-11-21T12:52:43.353+05:30  INFO 2814117 --- [CheckrApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-21T12:52:43.355+05:30  INFO 2814117 --- [CheckrApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-21T12:52:43.364+05:30  INFO 2814117 --- [CheckrApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-21T12:52:43.365+05:30  INFO 2814117 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-11-21T12:52:43.389+05:30  INFO 2814117 --- [CheckrApplication] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@312cc16b
+2024-11-21T12:52:43.389+05:30  INFO 2814117 --- [CheckrApplication] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-11-21T12:52:43.649+05:30  INFO 2814117 --- [CheckrApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T12:52:43.807+05:30  INFO 2814117 --- [CheckrApplication] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-21T12:52:43.808+05:30  WARN 2814117 --- [CheckrApplication] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-21T12:52:43.965+05:30  WARN 2814117 --- [CheckrApplication] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-21T12:52:44.188+05:30 DEBUG 2814117 --- [CheckrApplication] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2024-11-21T12:52:44.365+05:30 DEBUG 2814117 --- [CheckrApplication] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-11-21T12:52:44.686+05:30 DEBUG 2814117 --- [CheckrApplication] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-21T12:52:44.743+05:30 DEBUG 2814117 --- [CheckrApplication] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-21T12:52:44.900+05:30  INFO 2814117 --- [CheckrApplication] [main] c.e.C.CheckrApplicationTests             : Started CheckrApplicationTests in 2.499 seconds (process running for 14.42)
+2024-11-21T12:52:44.929+05:30  INFO 2814117 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T12:52:44.932+05:30  INFO 2814117 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-21T12:52:44.943+05:30  INFO 2814117 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-21T12:52:44.946+05:30 DEBUG 2814117 --- [CheckrApplication] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@373e09c7, started on Thu Nov 21 12:52:42 IST 2024
+2024-11-21T12:52:44.950+05:30  INFO 2814117 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-21T12:52:44.951+05:30  INFO 2814117 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-11-21T12:52:44.963+05:30  INFO 2814117 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
