@@ -8,7 +8,7 @@ sonarcloud-check:
     paths:
       - .sonar/cache
   script:
-    - mvn verify sonar:sonar -Dsonar.projectKey=rahul-suram_chekrapp
+    - mvn verify sonar:sonar -Dsonar.projectKey=rahul.suram_checkr-app
   only:
     - merge_requests
     - master
