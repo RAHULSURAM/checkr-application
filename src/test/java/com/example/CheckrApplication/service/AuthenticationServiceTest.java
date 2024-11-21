@@ -25,7 +25,7 @@ import static org.mockito.Mockito.*;
 
 @DataJpaTest
 @ExtendWith(MockitoExtension.class)
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class AuthenticationServiceTest {
 
     @InjectMocks
