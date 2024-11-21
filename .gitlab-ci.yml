@@ -11,5 +11,5 @@ sonarcloud-check:
     - mvn verify sonar:sonar -Dsonar.projectKey=rahul.suram_checkr-app
   only:
     - merge_requests
-    - master
+    - main
     - develop
