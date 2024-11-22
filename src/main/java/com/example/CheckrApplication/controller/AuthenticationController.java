@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/auth/v1")
+@RequestMapping("/checkr/auth/v1")
 public class AuthenticationController {
 
     @Autowired
