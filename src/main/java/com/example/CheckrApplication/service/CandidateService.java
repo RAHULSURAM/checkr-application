@@ -43,15 +43,6 @@ public class CandidateService {
     @Autowired
     private AdverseActionRepository adverseActionRepository;
 
-//    @Autowired
-//    private AdverseActionDTO adverseActionDTO;
-
-//    @Autowired
-//    private UserDAO userDAO;
-//
-//    @Autowired
-//    private CandidateDAO candidateDAO;
-
     @Autowired
     private UserRepository userRepository;
 
@@ -117,8 +108,6 @@ public class CandidateService {
         adverseActionDAO.setNumberOfDays(adverseActionDTO.getNumberOfDays());
         adverseActionDAO.setPostNoticeSentAt(adverseActionDTO.getPostNoticeSentAt());
         adverseActionDAO.setPreNoticeSentAt(adverseActionDTO.getPreNoticeSentAt());
-//        modelMapperConfig.modelMapper().map(adverseActionDTO, AdverseActionDAO.class);
-
         adverseActionRepository.save(adverseActionDAO);
 
     }
@@ -138,32 +127,6 @@ public class CandidateService {
         reportRepository.save(report);
         candidateRepository.save(candidateDAO);
     }
-
-//    public CandidateDTO createCandidate(CandidateDTO candidateDTO) {
-//        if(candidateRepository.findByEmail(candidateDTO.getEmail()).isPresent()) {
-//            throw new BadRequestException("Email is already in use.");
-//        }
-//        CandidateDAO candidate = modelMapper.map(candidateDTO, CandidateDAO.class);
-//        CandidateDAO savedCandidate = candidateRepository.save(candidate);
-//        return modelMapper.map(savedCandidate, CandidateDTO.class);
-//    }
-
-//    public CandidateDTO updateCandidate(Long id, CandidateDTO candidateDTO) {
-//        CandidateDAO candidate = candidateRepository.findById(id)
-//                .orElseThrow(() -> new ResourceNotFoundException("Candidate", "id", id));
-//        // Update fields
-//        candidate.setName(candidateDTO.getName());
-//        candidate.setEmail(candidateDTO.getEmail());
-//        // ... other fields
-//        CandidateDAO updatedCandidate = candidateRepository.save(candidate);
-//        return modelMapper.map(updatedCandidate, CandidateDTO.class);
-//    }
-
-//    public void deleteCandidate(Long id) {
-//        CandidateDAO candidate = candidateRepository.findById(id)
-//                .orElseThrow(() -> new ResourceNotFoundException("Candidate", "id", id));
-//        candidateRepository.delete(candidate);
-//    }
 
     private CandidateResponseDTO mapToCandidateResponse(CandidateDAO candidate) {
         CandidateResponseDTO response = new CandidateResponseDTO();
