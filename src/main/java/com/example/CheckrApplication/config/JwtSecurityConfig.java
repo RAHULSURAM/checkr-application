@@ -61,7 +61,7 @@ public class JwtSecurityConfig {
 // Set permissions on endpoints
         http.authorizeHttpRequests(auth -> auth
                 // Allow access to auth endpoints and static resources
-                .requestMatchers("/checkr/auth/**", "/images/**", "/scripts/**", "/styles/**", "/h2-console/**").permitAll()
+                .requestMatchers("/checkr/auth/**").permitAll()
                 // All other endpoints require authentication
                 .anyRequest().authenticated()
         );

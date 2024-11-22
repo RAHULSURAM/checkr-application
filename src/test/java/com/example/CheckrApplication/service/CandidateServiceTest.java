@@ -11,8 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.jpa.domain.Specification;
@@ -95,7 +93,7 @@ class CandidateServiceTest {
 //        when(modelMapper.map(any(CandidateDAO.class), eq(CandidateDTO.class))).thenReturn(new CandidateDTO());
 
 // Act
-        Page<CandidateResponseDTO> result = candidateService.getAllCandidates(0, 10, null, null, null);
+        Page<CandidateResponseDTO> result = candidateService.getAllCandidates(0, 10, "Jo", "CONSIDER", "PRE_ADVERSE_ACTION");
 
 // Assert
         assertNotNull(result);
@@ -126,6 +124,7 @@ class CandidateServiceTest {
         assertTrue(response.getViolations().size() >= 0); // Assuming no violations
         verify(candidateRepository, times(1)).findById(1L);
     }
+
 
     @Test
     void getCandidateDetail_NotFound() {
