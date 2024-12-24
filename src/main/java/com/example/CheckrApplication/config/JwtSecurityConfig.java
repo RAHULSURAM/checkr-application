@@ -3,6 +3,7 @@ package com.example.CheckrApplication.config;
 import com.example.CheckrApplication.exception.JwtAuthenticationEntryPoint;
 import com.example.CheckrApplication.security.CustomUserDetailsService;
 import com.example.CheckrApplication.security.JwtAuthenticationFilter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.security.authentication.*;
@@ -12,6 +13,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.*;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,13 +22,18 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableMethodSecurity
+@Slf4j
 public class JwtSecurityConfig {
+
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
 
     @Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;
+
+    @Autowired
+    private CustomLogoutHandler logoutHandler;
 
     // Define the JWT authentication filter
     @Bean
@@ -50,6 +57,7 @@ public class JwtSecurityConfig {
     // Security filter chain
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        log.info("started security filter chain in jwtsecurityConfig");
         // Disable CSRF as we are using JWT
         http.csrf(csrf -> csrf.disable());
 
@@ -79,14 +87,25 @@ public class JwtSecurityConfig {
         //for using postman
         http.httpBasic(Customizer.withDefaults());
 
+//for logout
+        http.logout(l->l.logoutUrl("/logout")
+                .addLogoutHandler(logoutHandler)
+                .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext())
+        );
+
+        log.info("Ended security filter chain in jwtsecurityConfig");
+
         return http.build();
     }
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
+        log.info("started AuthenticationProvider in JwtSecurityConfig");
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
         provider.setUserDetailsService(customUserDetailsService);
+
+        log.info("Ended AuthenticationProvider in JwtSecurityConfig");
 
 
         return provider;

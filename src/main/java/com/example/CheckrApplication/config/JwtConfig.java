@@ -1,8 +1,10 @@
 package com.example.CheckrApplication.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+@Slf4j
 @Configuration
 @ConfigurationProperties(prefix = "jwt")
 public class JwtConfig {
@@ -24,4 +26,6 @@ public class JwtConfig {
     public void setExpirationMs(long expirationMs) {
         this.expirationMs = expirationMs;
     }
+
+
 }

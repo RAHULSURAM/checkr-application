@@ -1,10 +1,12 @@
 package com.example.CheckrApplication.service;
 
+import com.example.CheckrApplication.DAO.Token;
 import com.example.CheckrApplication.DAO.UserDAO;
 import com.example.CheckrApplication.DTO.SigninRequestDTO;
 import com.example.CheckrApplication.DTO.SigninResponseDTO;
 import com.example.CheckrApplication.DTO.SignupRequestDTO;
 import com.example.CheckrApplication.DTO.UserDTO;
+import com.example.CheckrApplication.JPARepository.TokenRepository;
 import com.example.CheckrApplication.JPARepository.UserRepository;
 import com.example.CheckrApplication.exception.BadRequestException;
 import com.example.CheckrApplication.exception.ResourceNotFoundException;
@@ -18,11 +20,16 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AuthenticationService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private TokenRepository tokenRepository;
 
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(12);
@@ -68,6 +75,11 @@ public class AuthenticationService {
         UserDAO user = userRepository.findByEmail(signinRequest.getEmail())
                 .orElseThrow(() -> new ResourceNotFoundException("User", "email", signinRequest.getEmail()));
 
+        revokeAllUserTokens(user);
+
+        //save the generated token in the database
+        saveUserToken(jwt, user);
+
         UserDTO userDTO = new UserDTO();
         userDTO.setId(user.getId());
         userDTO.setEmail(user.getEmail());
@@ -80,6 +92,21 @@ public class AuthenticationService {
         response.setUser(userDTO);
 
         return response;
+    }
+
+    private void revokeAllUserTokens(UserDAO user) {
+        List<Token> listAllTokensOfUsers = tokenRepository.findAllTokenByUser(user.getId());
+        if(!listAllTokensOfUsers.isEmpty())
+            listAllTokensOfUsers.forEach(token -> token.setLoggedOut(true));
+        tokenRepository.saveAll(listAllTokensOfUsers);
+    }
+
+    private void saveUserToken(String jwt, UserDAO user) {
+        Token token = new Token();
+        token.setToken(jwt);
+        token.setLoggedOut(false);
+        token.setUserDAO(user);
+        tokenRepository.save(token);
     }
 
     // Other methods for reset password

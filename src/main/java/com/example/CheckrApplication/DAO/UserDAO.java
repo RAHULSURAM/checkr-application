@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Setter
 @Getter
@@ -40,5 +41,6 @@ public class UserDAO {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // Getters and Setters
+//    @OneToMany(mappedBy = "userDao")
+//    private List<Token> tokens;
 }

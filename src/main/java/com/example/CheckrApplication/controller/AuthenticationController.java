@@ -8,6 +8,7 @@ import com.example.CheckrApplication.exception.BadRequestException;
 import com.example.CheckrApplication.service.AuthenticationService;
 import jakarta.validation.Valid;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 @RequestMapping("/checkr/auth/v1")
 public class AuthenticationController {
@@ -25,12 +27,14 @@ public class AuthenticationController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequestDTO signupRequestDTO) throws BadRequestException {
+        log.info("Started /signup in AuthenticationController.registerUser");
         authenticationService.registerUser(signupRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse(true, "User registered successfully"));
     }
 
     @PostMapping("/signin")
     public ResponseEntity<SigninResponseDTO> authenticateUser(@Valid @RequestBody SigninRequestDTO signinRequestDTO){
+        log.info("Started /signin in AuthenticationController.authenticateUser");
         SigninResponseDTO response = authenticationService.authenticateUser(signinRequestDTO);
         return ResponseEntity.ok(response);
     }
