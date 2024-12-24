@@ -101,4 +101,18 @@ public class CandidateController {
                 .body(Map.of("error", "Failed to generate and send report: " + e.getMessage()));
         }
     }
+
+    @GetMapping("/adverse-action")
+    public ResponseEntity<Page<AdverseActionResponseDTO>> getAdverseActions(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        try {
+            log.info("Started /adverse-action in CandidateController.getAdverseActions");
+            Page<AdverseActionResponseDTO> adverseActions = candidateService.getAdverseActions(page, size);
+            return ResponseEntity.ok(adverseActions);
+        } catch (Exception e) {
+            log.error("Error in /adverse-action: " + e.getMessage(), e);
+            throw new RuntimeException("Failed to fetch adverse actions", e);
+        }
+    }
 }

@@ -239,6 +239,20 @@ public class CandidateService {
         }
     }
 
+    public Page<AdverseActionResponseDTO> getAdverseActions(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<AdverseActionDAO> adverseActions = adverseActionRepository.findAll(pageable);
+        
+        return adverseActions.map(action -> {
+            AdverseActionResponseDTO dto = new AdverseActionResponseDTO();
+            dto.setCandidateName(action.getCandidateDAO().getName());
+            dto.setStatus(action.getCandidateDAO().getStatus());
+            dto.setPreNoticeSentAt(action.getPreNoticeSentAt());
+            dto.setPostNoticeSentAt(action.getPostNoticeSentAt());
+            return dto;
+        });
+    }
+
     private CandidateResponseDTO mapToCandidateResponse(CandidateDAO candidate) {
         CandidateResponseDTO response = new CandidateResponseDTO();
         response.setId(candidate.getId());

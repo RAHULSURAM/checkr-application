@@ -5052,3 +5052,6 @@ Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Pa
 2024-12-24T19:50:56.600+05:30 DEBUG 19840 --- [CheckrApplication] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 2024-12-24T19:50:56.601+05:30  INFO 19840 --- [CheckrApplication] [http-nio-8080-exec-3] c.e.C.security.UserPrincipal             : Started & Ended getUsername in UserPrincipal
 2024-12-24T19:50:56.601+05:30  INFO 19840 --- [CheckrApplication] [http-nio-8080-exec-3] c.e.C.security.JwtAuthenticationFilter   : Ended doFilterInternal in JwtAuthenticationFilter
+2024-12-24T20:12:19.314+05:30  INFO 19840 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-24T20:12:19.468+05:30  INFO 19840 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-24T20:12:19.501+05:30  INFO 19840 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
