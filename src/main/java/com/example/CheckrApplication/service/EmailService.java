@@ -21,8 +21,9 @@ public class EmailService {
         helper.setTo(to);
         helper.setSubject(subject);
         helper.setText(body);
-        
-        helper.addAttachment(attachmentName, new ByteArrayResource(attachment));
+
+        if(attachment!=null)
+            helper.addAttachment(attachmentName, new ByteArrayResource(attachment));
         
         mailSender.send(message);
     }
