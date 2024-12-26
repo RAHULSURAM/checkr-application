@@ -57,36 +57,6 @@ public class CandidateController {
         return ResponseEntity.ok(new ApiResponse(true, "Candidate engaged successfully"));
     }
 
-//    @PostMapping
-//    public ResponseEntity<CandidateDTO> createCandidate(@Valid @RequestBody CandidateDTO candidateDTO) {
-//        CandidateDTO createdCandidate = candidateService.createCandidate(candidateDTO);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(createdCandidate);
-//    }
-
-//    @PutMapping("/{id}")
-//    public ResponseEntity<CandidateDTO> updateCandidate(@PathVariable Long id, @Valid @RequestBody CandidateDTO candidateDTO) {
-//        CandidateDTO updatedCandidate = candidateService.updateCandidate(id, candidateDTO);
-//        return ResponseEntity.ok(updatedCandidate);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<?> deleteCandidate(@PathVariable Long id) {
-//        candidateService.deleteCandidate(id);
-//        return ResponseEntity.noContent().build();
-//    }
-
-
-//    @PutMapping("/{id}")
-//    public ResponseEntity<CandidateDTO> updateCandidate(@PathVariable Long id, @Valid @RequestBody CandidateDTO candidateDTO) {
-//        CandidateDTO updatedCandidate = candidateService.updateCandidate(id, candidateDTO);
-//        return ResponseEntity.ok(updatedCandidate);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<?> deleteCandidate(@PathVariable Long id) {
-//        candidateService.deleteCandidate(id);
-//        return ResponseEntity.noContent().build();
-//    }
 
     @GetMapping("/export")
     public ResponseEntity<?> exportCandidates(
