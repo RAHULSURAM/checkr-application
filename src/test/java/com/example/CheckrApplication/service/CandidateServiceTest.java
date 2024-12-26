@@ -6,6 +6,7 @@ import com.example.CheckrApplication.JPARepository.*;
 import com.example.CheckrApplication.config.ModelMapperConfig;
 import com.example.CheckrApplication.enums.*;
 import com.example.CheckrApplication.exception.ResourceNotFoundException;
+import jakarta.mail.MessagingException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,8 +15,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -48,6 +53,9 @@ class CandidateServiceTest {
 
     @Mock
     private ModelMapper modelMapper;
+
+    @Mock
+    private EmailService emailService;
 
     private CandidateDAO candidateDAO;
     private ReportDAO reportDAO;
@@ -223,5 +231,159 @@ class CandidateServiceTest {
         verify(candidateRepository, times(0)).save(any(CandidateDAO.class));
     }
 
-// Additional tests for filtering, mapping, etc., can be added here to achieve 100% coverage
+    @Test
+    void exportCandidatesPDF_Success() throws MessagingException {
+        // Setup security context
+        Authentication authentication = mock(Authentication.class);
+        SecurityContext securityContext = mock(SecurityContext.class);
+        when(securityContext.getAuthentication()).thenReturn(authentication);
+        when(authentication.getName()).thenReturn("test@example.com");
+        SecurityContextHolder.setContext(securityContext);
+
+        try {
+            LocalDateTime fromDate = LocalDateTime.now().minusDays(7);
+            LocalDateTime toDate = LocalDateTime.now();
+
+            List<CandidateDAO> candidates = new ArrayList<>();
+            when(candidateRepository.findByCreatedAtBetween(any(LocalDateTime.class), any(LocalDateTime.class)))
+                    .thenReturn(candidates);
+
+            doNothing().when(emailService).sendEmailWithAttachment(
+                anyString(),
+                anyString(),
+                anyString(),
+                any(byte[].class),
+                anyString()
+            );
+
+            // Act & Assert
+            assertDoesNotThrow(() -> candidateService.exportCandidatesPDF(fromDate.toLocalDate(), toDate.toLocalDate()));
+
+            // Verify
+            verify(candidateRepository).findByCreatedAtBetween(any(LocalDateTime.class), any(LocalDateTime.class));
+            verify(emailService).sendEmailWithAttachment(
+                eq("test@example.com"),
+                contains("Candidates Report"),
+                contains("candidates report for the period"),
+                any(byte[].class),
+                eq("candidates_report.pdf")
+            );
+        } finally {
+            // Cleanup security context
+            SecurityContextHolder.clearContext();
+        }
+    }
+
+    @Test
+    void exportCandidatesPDF_WhenNoData_ShouldStillGenerateReport() throws MessagingException {
+        // Arrange
+        LocalDate fromDate = LocalDate.now();
+        LocalDate toDate = fromDate.plusDays(7);
+
+        when(candidateRepository.findByCreatedAtBetween(any(LocalDateTime.class), any(LocalDateTime.class)))
+            .thenReturn(Collections.emptyList());
+
+        // Mock SecurityContextHolder
+        try (MockedStatic<SecurityContextHolder> securityContextHolder = mockStatic(SecurityContextHolder.class)) {
+            org.springframework.security.core.Authentication auth = mock(org.springframework.security.core.Authentication.class);
+            org.springframework.security.core.context.SecurityContext securityContext = mock(org.springframework.security.core.context.SecurityContext.class);
+            
+            when(securityContext.getAuthentication()).thenReturn(auth);
+            when(auth.getName()).thenReturn("test@example.com");
+            securityContextHolder.when(SecurityContextHolder::getContext).thenReturn(securityContext);
+
+            // Act
+            assertDoesNotThrow(() -> candidateService.exportCandidatesPDF(fromDate, toDate));
+
+            // Assert
+            verify(candidateRepository).findByCreatedAtBetween(any(LocalDateTime.class), any(LocalDateTime.class));
+            verify(emailService).sendEmailWithAttachment(
+                eq("test@example.com"),
+                contains("Candidates Report"),
+                contains("Total Candidates: 0"),
+                any(byte[].class),
+                eq("candidates_report.pdf")
+            );
+        }
+    }
+
+    @Test
+    void exportCandidatesPDF_WhenEmailFails_ShouldThrowException() throws MessagingException {
+        // Arrange
+        LocalDate fromDate = LocalDate.now();
+        LocalDate toDate = fromDate.plusDays(7);
+
+        when(candidateRepository.findByCreatedAtBetween(any(LocalDateTime.class), any(LocalDateTime.class)))
+            .thenReturn(Collections.emptyList());
+
+        doThrow(new RuntimeException("Email sending failed"))
+            .when(emailService)
+            .sendEmailWithAttachment(anyString(), anyString(), anyString(), any(byte[].class), anyString());
+
+        // Mock SecurityContextHolder
+        try (MockedStatic<SecurityContextHolder> securityContextHolder = mockStatic(SecurityContextHolder.class)) {
+            org.springframework.security.core.Authentication auth = mock(org.springframework.security.core.Authentication.class);
+            org.springframework.security.core.context.SecurityContext securityContext = mock(org.springframework.security.core.context.SecurityContext.class);
+            
+            when(securityContext.getAuthentication()).thenReturn(auth);
+            when(auth.getName()).thenReturn("test@example.com");
+            securityContextHolder.when(SecurityContextHolder::getContext).thenReturn(securityContext);
+
+            // Act & Assert
+            RuntimeException exception = assertThrows(RuntimeException.class, 
+                () -> candidateService.exportCandidatesPDF(fromDate, toDate));
+            assertEquals("Failed to generate and send PDF report", exception.getMessage());
+        }
+    }
+
+    @Test
+    void getAdverseActions_Success() {
+        // Arrange
+        int page = 0;
+        int size = 10;
+        Pageable pageable = PageRequest.of(page, size);
+
+        CandidateDAO candidate = new CandidateDAO();
+        candidate.setName("John Doe");
+        candidate.setStatus(Status.CLEAR);
+
+        AdverseActionDAO action = new AdverseActionDAO();
+        action.setCandidateDAO(candidate);
+        action.setPreNoticeSentAt(LocalDateTime.now());
+        action.setPostNoticeSentAt(LocalDateTime.now().plusDays(7));
+
+        Page<AdverseActionDAO> adverseActionsPage = new PageImpl<>(Arrays.asList(action));
+        when(adverseActionRepository.findAll(pageable)).thenReturn(adverseActionsPage);
+
+        // Act
+        Page<AdverseActionResponseDTO> result = candidateService.getAdverseActions(page, size);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(1, result.getContent().size());
+        AdverseActionResponseDTO dto = result.getContent().get(0);
+        assertEquals("John Doe", dto.getCandidateName());
+        assertEquals(Status.CLEAR, dto.getStatus());
+        assertNotNull(dto.getPreNoticeSentAt());
+        assertNotNull(dto.getPostNoticeSentAt());
+        verify(adverseActionRepository).findAll(pageable);
+    }
+
+    @Test
+    void getAdverseActions_WhenNoData_ShouldReturnEmptyPage() {
+        // Arrange
+        int page = 0;
+        int size = 10;
+        Pageable pageable = PageRequest.of(page, size);
+        Page<AdverseActionDAO> emptyPage = new PageImpl<>(Collections.emptyList());
+        when(adverseActionRepository.findAll(pageable)).thenReturn(emptyPage);
+
+        // Act
+        Page<AdverseActionResponseDTO> result = candidateService.getAdverseActions(page, size);
+
+        // Assert
+        assertNotNull(result);
+        assertTrue(result.getContent().isEmpty());
+        verify(adverseActionRepository).findAll(pageable);
+    }
 }

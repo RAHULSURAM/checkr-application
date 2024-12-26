@@ -1,518 +1,57 @@
-2024-12-25T17:32:16.427+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Starting CheckrApplication using Java 23.0.1 with PID 14808 (C:\Web-projects\CheckrApplication\target\classes started by Admin in C:\Web-projects\CheckrApplication)
-2024-12-25T17:32:16.469+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : No active profile set, falling back to 1 default profile: "default"
-2024-12-25T17:32:16.762+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-12-25T17:32:21.077+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-25T17:32:21.298+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 200 ms. Found 7 JPA repository interfaces.
-2024-12-25T17:32:24.609+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-12-25T17:32:24.658+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-25T17:32:24.661+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-12-25T17:32:24.976+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-25T17:32:24.977+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8213 ms
-2024-12-25T17:32:25.774+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-25T17:32:26.134+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-12-25T17:32:26.255+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-12-25T17:32:27.226+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-25T17:32:27.320+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-12-25T17:32:27.907+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@630f311
-2024-12-25T17:32:27.912+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-12-25T17:32:31.337+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-25T17:32:32.020+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] c.e.C.security.JwtTokenProvider          : started JwtTokenProvider in JwtTokenProvider
-2024-12-25T17:32:32.027+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] c.e.C.security.JwtTokenProvider          : Ended JwtTokenProvider in JwtTokenProvider
-2024-12-25T17:32:32.110+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-12-25T17:32:33.158+05:30 DEBUG 14808 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, jwtAuthenticationFilter urls=[/*] order=2147483647
-2024-12-25T17:32:33.159+05:30 DEBUG 14808 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
-2024-12-25T17:32:33.349+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : started AuthenticationProvider in JwtSecurityConfig
-2024-12-25T17:32:33.402+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : Ended AuthenticationProvider in JwtSecurityConfig
-2024-12-25T17:32:33.413+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-12-25T17:32:33.416+05:30  WARN 14808 --- [CheckrApplication] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-12-25T17:32:33.968+05:30  WARN 14808 --- [CheckrApplication] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'passwordResetController': Unsatisfied dependency expressed through field 'passwordResetService': Error creating bean with name 'passwordResetService': Injection of autowired dependencies failed
-2024-12-25T17:32:33.970+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-12-25T17:32:33.978+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-12-25T17:32:34.001+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-12-25T17:32:34.013+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-12-25T17:32:34.051+05:30  INFO 14808 --- [CheckrApplication] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-12-25T17:32:34.108+05:30 ERROR 14808 --- [CheckrApplication] [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'passwordResetController': Unsatisfied dependency expressed through field 'passwordResetService': Error creating bean with name 'passwordResetService': Injection of autowired dependencies failed
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.14.jar:6.1.14]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.14.jar:6.1.14]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.5.jar:3.3.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.5.jar:3.3.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.5.jar:3.3.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.5.jar:3.3.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.5.jar:3.3.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.5.jar:3.3.5]
-	at com.example.CheckrApplication.CheckrApplication.main(CheckrApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.5.jar:3.3.5]
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'passwordResetService': Injection of autowired dependencies failed
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.1.14.jar:6.1.14]
-	... 23 common frames omitted
-Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'app.frontend.base-url' in value "${app.frontend.base-url}"
-	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180) ~[spring-core-6.1.14.jar:6.1.14]
-	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126) ~[spring-core-6.1.14.jar:6.1.14]
-	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239) ~[spring-core-6.1.14.jar:6.1.14]
-	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-6.1.14.jar:6.1.14]
-	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200) ~[spring-context-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:964) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1374) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145) ~[spring-beans-6.1.14.jar:6.1.14]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.1.14.jar:6.1.14]
-	... 34 common frames omitted
-
-2024-12-25T17:37:22.185+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Starting CheckrApplication using Java 23.0.1 with PID 13224 (C:\Web-projects\CheckrApplication\target\classes started by Admin in C:\Web-projects\CheckrApplication)
-2024-12-25T17:37:22.192+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : No active profile set, falling back to 1 default profile: "default"
-2024-12-25T17:37:22.413+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-12-25T17:37:25.507+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-25T17:37:25.740+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 210 ms. Found 7 JPA repository interfaces.
-2024-12-25T17:37:29.861+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-12-25T17:37:29.954+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-25T17:37:29.959+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-12-25T17:37:30.271+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-25T17:37:30.333+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7917 ms
-2024-12-25T17:37:31.271+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-25T17:37:31.615+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-12-25T17:37:32.331+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-12-25T17:37:34.061+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-25T17:37:34.201+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-12-25T17:37:34.872+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e42e5c6
-2024-12-25T17:37:34.876+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-12-25T17:37:39.698+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-25T17:37:40.650+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] c.e.C.security.JwtTokenProvider          : started JwtTokenProvider in JwtTokenProvider
-2024-12-25T17:37:40.654+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] c.e.C.security.JwtTokenProvider          : Ended JwtTokenProvider in JwtTokenProvider
-2024-12-25T17:37:40.772+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-12-25T17:37:43.686+05:30 DEBUG 13224 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, jwtAuthenticationFilter urls=[/*] order=2147483647
-2024-12-25T17:37:43.687+05:30 DEBUG 13224 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
-2024-12-25T17:37:44.163+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : started AuthenticationProvider in JwtSecurityConfig
-2024-12-25T17:37:44.219+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : Ended AuthenticationProvider in JwtSecurityConfig
-2024-12-25T17:37:44.227+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-12-25T17:37:44.229+05:30  WARN 13224 --- [CheckrApplication] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-12-25T17:37:45.576+05:30  WARN 13224 --- [CheckrApplication] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-25T17:37:45.942+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : started security filter chain in jwtsecurityConfig
-2024-12-25T17:37:46.391+05:30 DEBUG 13224 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
-2024-12-25T17:37:47.351+05:30 DEBUG 13224 --- [CheckrApplication] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-12-25T17:37:47.397+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : Ended security filter chain in jwtsecurityConfig
-2024-12-25T17:37:48.412+05:30 DEBUG 13224 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-12-25T17:37:48.577+05:30 DEBUG 13224 --- [CheckrApplication] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-12-25T17:37:49.465+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-12-25T17:37:49.751+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-12-25T17:37:49.862+05:30  INFO 13224 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Started CheckrApplication in 29.093 seconds (process running for 30.957)
-2024-12-25T17:38:04.340+05:30  INFO 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-25T17:38:04.341+05:30  INFO 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-12-25T17:38:04.348+05:30 DEBUG 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2024-12-25T17:38:04.348+05:30 DEBUG 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2024-12-25T17:38:04.350+05:30 DEBUG 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2024-12-25T17:38:04.352+05:30 DEBUG 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@65fc59cc
-2024-12-25T17:38:04.353+05:30 DEBUG 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@3a340a4c
-2024-12-25T17:38:04.354+05:30 DEBUG 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-12-25T17:38:04.355+05:30  INFO 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2024-12-25T17:38:04.450+05:30  INFO 13224 --- [CheckrApplication] [http-nio-8080-exec-2] c.e.C.security.JwtAuthenticationFilter   : started doFilterInternal in JwtAuthenticationFilter
-2024-12-25T17:38:04.467+05:30 DEBUG 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/checkr/auth/v1/fp/forgot-password", parameters={}
-2024-12-25T17:38:04.536+05:30  WARN 13224 --- [CheckrApplication] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
-2024-12-25T17:38:04.539+05:30 DEBUG 13224 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 405 METHOD_NOT_ALLOWED
-2024-12-25T17:38:04.541+05:30  INFO 13224 --- [CheckrApplication] [http-nio-8080-exec-2] c.e.C.security.JwtAuthenticationFilter   : Ended doFilterInternal in JwtAuthenticationFilter
-2024-12-25T17:38:32.240+05:30  INFO 13224 --- [CheckrApplication] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 55 class path changes (0 additions, 55 deletions, 0 modifications)
-2024-12-25T17:38:32.308+05:30  INFO 13224 --- [CheckrApplication] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-12-25T17:38:32.338+05:30  INFO 13224 --- [CheckrApplication] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-12-25T17:38:32.368+05:30  INFO 13224 --- [CheckrApplication] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-12-25T18:04:22.339+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Starting CheckrApplication using Java 23.0.1 with PID 13052 (C:\Web-projects\CheckrApplication\target\classes started by Admin in C:\Web-projects\CheckrApplication)
-2024-12-25T18:04:22.349+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : No active profile set, falling back to 1 default profile: "default"
-2024-12-25T18:04:22.546+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-12-25T18:04:26.202+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-25T18:04:26.437+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 208 ms. Found 7 JPA repository interfaces.
-2024-12-25T18:04:28.687+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-12-25T18:04:28.736+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-25T18:04:28.737+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-12-25T18:04:28.950+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-25T18:04:28.952+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6400 ms
-2024-12-25T18:04:29.435+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-25T18:04:29.791+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-12-25T18:04:29.895+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-12-25T18:04:30.853+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-25T18:04:30.947+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-12-25T18:04:31.532+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47f9fa0a
-2024-12-25T18:04:31.536+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-12-25T18:04:35.162+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-25T18:04:36.135+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] c.e.C.security.JwtTokenProvider          : started JwtTokenProvider in JwtTokenProvider
-2024-12-25T18:04:36.142+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] c.e.C.security.JwtTokenProvider          : Ended JwtTokenProvider in JwtTokenProvider
-2024-12-25T18:04:36.215+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-12-25T18:04:37.450+05:30 DEBUG 13052 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, jwtAuthenticationFilter urls=[/*] order=2147483647
-2024-12-25T18:04:37.451+05:30 DEBUG 13052 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
-2024-12-25T18:04:37.718+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : started AuthenticationProvider in JwtSecurityConfig
-2024-12-25T18:04:37.741+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : Ended AuthenticationProvider in JwtSecurityConfig
-2024-12-25T18:04:37.745+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-12-25T18:04:37.747+05:30  WARN 13052 --- [CheckrApplication] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-12-25T18:04:38.189+05:30  WARN 13052 --- [CheckrApplication] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-25T18:04:38.360+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : started security filter chain in jwtsecurityConfig
-2024-12-25T18:04:38.639+05:30 DEBUG 13052 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
-2024-12-25T18:04:38.987+05:30 DEBUG 13052 --- [CheckrApplication] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-12-25T18:04:39.016+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : Ended security filter chain in jwtsecurityConfig
-2024-12-25T18:04:39.319+05:30 DEBUG 13052 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-12-25T18:04:39.396+05:30 DEBUG 13052 --- [CheckrApplication] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-12-25T18:04:40.032+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-12-25T18:04:40.133+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-12-25T18:04:40.160+05:30  INFO 13052 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Started CheckrApplication in 19.333 seconds (process running for 22.475)
-2024-12-25T18:04:53.348+05:30  INFO 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-25T18:04:53.348+05:30  INFO 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-12-25T18:04:53.348+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2024-12-25T18:04:53.349+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2024-12-25T18:04:53.349+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2024-12-25T18:04:53.351+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1b3ab188
-2024-12-25T18:04:53.353+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@3603e42f
-2024-12-25T18:04:53.354+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-12-25T18:04:53.354+05:30  INFO 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2024-12-25T18:04:53.397+05:30  INFO 13052 --- [CheckrApplication] [http-nio-8080-exec-2] c.e.C.security.JwtAuthenticationFilter   : started doFilterInternal in JwtAuthenticationFilter
-2024-12-25T18:04:53.411+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/checkr/auth/v1/fp/forgot-password", parameters={}
-2024-12-25T18:04:53.415+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.CheckrApplication.controller.PasswordResetController#forgotPassword(ForgotPasswordRequestDTO)
-2024-12-25T18:04:53.686+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ForgotPasswordRequestDTO(email=rahulsuram01@gmail.com)]
-2024-12-25T18:04:54.160+05:30 ERROR 13052 --- [CheckrApplication] [http-nio-8080-exec-2] c.e.C.service.PasswordResetService       : Failed to send password reset email to: rahulsuram01@gmail.com
-
-java.lang.IllegalArgumentException: Byte array must not be null
-	at org.springframework.util.Assert.notNull(Assert.java:172) ~[spring-core-6.1.14.jar:6.1.14]
-	at org.springframework.core.io.ByteArrayResource.<init>(ByteArrayResource.java:65) ~[spring-core-6.1.14.jar:6.1.14]
-	at org.springframework.core.io.ByteArrayResource.<init>(ByteArrayResource.java:56) ~[spring-core-6.1.14.jar:6.1.14]
-	at com.example.CheckrApplication.service.EmailService.sendEmailWithAttachment(EmailService.java:25) ~[classes/:na]
-	at com.example.CheckrApplication.service.PasswordResetService.initiatePasswordReset(PasswordResetService.java:74) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.14.jar:6.1.14]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.14.jar:6.1.14]
-	at com.example.CheckrApplication.service.PasswordResetService$$SpringCGLIB$$0.initiatePasswordReset(<generated>) ~[classes/:na]
-	at com.example.CheckrApplication.controller.PasswordResetController.forgotPassword(PasswordResetController.java:26) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at com.example.CheckrApplication.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:53) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
-
-2024-12-25T18:04:54.183+05:30 ERROR 13052 --- [CheckrApplication] [http-nio-8080-exec-2] c.e.C.c.PasswordResetController          : Error in forgot password request
-
-java.lang.RuntimeException: Failed to send password reset email
-	at com.example.CheckrApplication.service.PasswordResetService.initiatePasswordReset(PasswordResetService.java:83) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.14.jar:6.1.14]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.14.jar:6.1.14]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.14.jar:6.1.14]
-	at com.example.CheckrApplication.service.PasswordResetService$$SpringCGLIB$$0.initiatePasswordReset(<generated>) ~[classes/:na]
-	at com.example.CheckrApplication.controller.PasswordResetController.forgotPassword(PasswordResetController.java:26) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at com.example.CheckrApplication.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:53) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.4.jar:6.3.4]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
-	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
-
-2024-12-25T18:04:54.231+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2024-12-25T18:04:54.233+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=If an account exists with this email, you will receive password reset instructions.}]
-2024-12-25T18:04:54.285+05:30 DEBUG 13052 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2024-12-25T18:04:54.287+05:30  INFO 13052 --- [CheckrApplication] [http-nio-8080-exec-2] c.e.C.security.JwtAuthenticationFilter   : Ended doFilterInternal in JwtAuthenticationFilter
-2024-12-25T18:55:44.012+05:30  WARN 13052 --- [CheckrApplication] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m41s800ms390µs).
-2024-12-25T18:59:40.182+05:30  INFO 13052 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-12-25T18:59:41.228+05:30  INFO 13052 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-12-25T18:59:41.396+05:30  INFO 13052 --- [CheckrApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-12-25T19:00:05.977+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Starting CheckrApplication using Java 23.0.1 with PID 23616 (C:\Web-projects\CheckrApplication\target\classes started by Admin in C:\Web-projects\CheckrApplication)
-2024-12-25T19:00:05.984+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : No active profile set, falling back to 1 default profile: "default"
-2024-12-25T19:00:06.229+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-12-25T19:00:09.430+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-25T19:00:09.705+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 254 ms. Found 7 JPA repository interfaces.
-2024-12-25T19:00:12.103+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-12-25T19:00:12.141+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-25T19:00:12.142+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-12-25T19:00:12.288+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-25T19:00:12.304+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6058 ms
-2024-12-25T19:00:12.868+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-25T19:00:13.309+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-12-25T19:00:13.416+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-12-25T19:00:14.356+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-25T19:00:14.449+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-12-25T19:00:15.167+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72b967c4
-2024-12-25T19:00:15.170+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-12-25T19:00:18.754+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-25T19:00:20.469+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] c.e.C.security.JwtTokenProvider          : started JwtTokenProvider in JwtTokenProvider
-2024-12-25T19:00:20.473+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] c.e.C.security.JwtTokenProvider          : Ended JwtTokenProvider in JwtTokenProvider
-2024-12-25T19:00:20.635+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-12-25T19:00:22.594+05:30 DEBUG 23616 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: springSecurityFilterChain urls=[/*] order=-100, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105, jwtAuthenticationFilter urls=[/*] order=2147483647
-2024-12-25T19:00:22.595+05:30 DEBUG 23616 --- [CheckrApplication] [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
-2024-12-25T19:00:22.878+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : started AuthenticationProvider in JwtSecurityConfig
-2024-12-25T19:00:22.920+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : Ended AuthenticationProvider in JwtSecurityConfig
-2024-12-25T19:00:22.925+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-12-25T19:00:22.927+05:30  WARN 23616 --- [CheckrApplication] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-12-25T19:00:23.587+05:30  WARN 23616 --- [CheckrApplication] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-25T19:00:23.764+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : started security filter chain in jwtsecurityConfig
-2024-12-25T19:00:24.207+05:30 DEBUG 23616 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
-2024-12-25T19:00:24.558+05:30 DEBUG 23616 --- [CheckrApplication] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-12-25T19:00:24.625+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] c.e.C.config.JwtSecurityConfig           : Ended security filter chain in jwtsecurityConfig
-2024-12-25T19:00:24.981+05:30 DEBUG 23616 --- [CheckrApplication] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-12-25T19:00:25.142+05:30 DEBUG 23616 --- [CheckrApplication] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-12-25T19:00:25.963+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-12-25T19:00:26.061+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-12-25T19:00:26.084+05:30  INFO 23616 --- [CheckrApplication] [restartedMain] c.e.CheckrApplication.CheckrApplication  : Started CheckrApplication in 21.78 seconds (process running for 24.212)
-2024-12-25T19:02:02.849+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-25T19:02:02.850+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-12-25T19:02:02.851+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2024-12-25T19:02:02.851+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2024-12-25T19:02:02.852+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
-2024-12-25T19:02:02.856+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@379679d6
-2024-12-25T19:02:02.858+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@245c905c
-2024-12-25T19:02:02.859+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-12-25T19:02:02.860+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2024-12-25T19:02:02.942+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-2] c.e.C.security.JwtAuthenticationFilter   : started doFilterInternal in JwtAuthenticationFilter
-2024-12-25T19:02:02.958+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/checkr/auth/v1/fp/forgot-password", parameters={}
-2024-12-25T19:02:02.961+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.CheckrApplication.controller.PasswordResetController#forgotPassword(ForgotPasswordRequestDTO)
-2024-12-25T19:02:03.224+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ForgotPasswordRequestDTO(email=rahulsuram01@gmail.com)]
-2024-12-25T19:02:09.716+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2024-12-25T19:02:09.719+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=If an account exists with this email, you will receive password reset instructions.}]
-2024-12-25T19:02:09.779+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2024-12-25T19:02:09.780+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-2] c.e.C.security.JwtAuthenticationFilter   : Ended doFilterInternal in JwtAuthenticationFilter
-2024-12-25T19:05:31.544+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-6] c.e.C.security.JwtAuthenticationFilter   : started doFilterInternal in JwtAuthenticationFilter
-2024-12-25T19:05:31.547+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-6] c.e.C.security.JwtAuthenticationFilter   : Ended doFilterInternal in JwtAuthenticationFilter
-2024-12-25T19:05:55.839+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-4] c.e.C.security.JwtAuthenticationFilter   : started doFilterInternal in JwtAuthenticationFilter
-2024-12-25T19:05:55.842+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/checkr/auth/v1/fp/verify-reset-token?token=z-drvez5yEtrPXVSC3NRVxCu36ysbXD0_deAxNH9tjw", parameters={masked}
-2024-12-25T19:05:55.843+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.CheckrApplication.controller.PasswordResetController#verifyToken(String)
-2024-12-25T19:05:55.902+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2024-12-25T19:05:55.904+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{valid=true}]
-2024-12-25T19:05:55.908+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2024-12-25T19:05:55.909+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-4] c.e.C.security.JwtAuthenticationFilter   : Ended doFilterInternal in JwtAuthenticationFilter
-2024-12-25T19:09:12.198+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-9] c.e.C.security.JwtAuthenticationFilter   : started doFilterInternal in JwtAuthenticationFilter
-2024-12-25T19:09:12.199+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/checkr/auth/v1/fp/reset-password", parameters={}
-2024-12-25T19:09:12.199+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.CheckrApplication.controller.PasswordResetController#resetPassword(ResetPasswordRequestDTO)
-2024-12-25T19:09:12.210+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [ResetPasswordRequestDTO(token=z-drvez5yEtrPXVSC3NRVxCu36ysbXD0_deAxNH9tjw, newPassword=NewPassword12 (truncated)...]
-2024-12-25T19:09:16.149+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-2024-12-25T19:09:16.150+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{message=Password has been successfully reset}]
-2024-12-25T19:09:16.152+05:30 DEBUG 23616 --- [CheckrApplication] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2024-12-25T19:09:16.152+05:30  INFO 23616 --- [CheckrApplication] [http-nio-8080-exec-9] c.e.C.security.JwtAuthenticationFilter   : Ended doFilterInternal in JwtAuthenticationFilter
-2024-12-25T20:03:29.947+05:30  WARN 23616 --- [CheckrApplication] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=21m13s937ms855µs600ns).
+2024-12-26T18:24:23.258+05:30  INFO 25460 --- [CheckrApplication] [main] c.e.C.r.PasswordResetTokenRepositoryTest : Starting PasswordResetTokenRepositoryTest using Java 23.0.1 with PID 25460 (started by Admin in C:\Web-projects\CheckrApplication)
+2024-12-26T18:24:23.388+05:30  INFO 25460 --- [CheckrApplication] [main] c.e.C.r.PasswordResetTokenRepositoryTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-26T18:24:25.409+05:30  INFO 25460 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T18:24:25.607+05:30  INFO 25460 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176 ms. Found 7 JPA repository interfaces.
+2024-12-26T18:24:25.748+05:30  INFO 25460 --- [CheckrApplication] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-12-26T18:24:26.135+05:30  INFO 25460 --- [CheckrApplication] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:98a9d7c7-e306-4fa3-83d1-3defc6b18a31;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-26T18:24:26.897+05:30  INFO 25460 --- [CheckrApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-26T18:24:27.112+05:30  INFO 25460 --- [CheckrApplication] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-26T18:24:27.204+05:30  INFO 25460 --- [CheckrApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-26T18:24:28.060+05:30  INFO 25460 --- [CheckrApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T18:24:31.038+05:30  INFO 25460 --- [CheckrApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T18:24:32.163+05:30  INFO 25460 --- [CheckrApplication] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-26T18:24:33.320+05:30  INFO 25460 --- [CheckrApplication] [main] c.e.C.r.PasswordResetTokenRepositoryTest : Started PasswordResetTokenRepositoryTest in 11.386 seconds (process running for 15.152)
+2024-12-26T18:24:35.321+05:30  INFO 25460 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T18:27:46.919+05:30  INFO 21776 --- [CheckrApplication] [main] c.e.C.r.PasswordResetTokenRepositoryTest : Starting PasswordResetTokenRepositoryTest using Java 23.0.1 with PID 21776 (started by Admin in C:\Web-projects\CheckrApplication)
+2024-12-26T18:27:46.923+05:30  INFO 21776 --- [CheckrApplication] [main] c.e.C.r.PasswordResetTokenRepositoryTest : No active profile set, falling back to 1 default profile: "default"
+2024-12-26T18:27:48.236+05:30  INFO 21776 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T18:27:48.522+05:30  INFO 21776 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 265 ms. Found 7 JPA repository interfaces.
+2024-12-26T18:27:48.664+05:30  INFO 21776 --- [CheckrApplication] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-12-26T18:27:49.235+05:30  INFO 21776 --- [CheckrApplication] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:b605b228-2226-4dad-ac79-03875a12c599;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-26T18:27:50.117+05:30  INFO 21776 --- [CheckrApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-26T18:27:50.312+05:30  INFO 21776 --- [CheckrApplication] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-26T18:27:50.414+05:30  INFO 21776 --- [CheckrApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-26T18:27:51.244+05:30  INFO 21776 --- [CheckrApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T18:27:53.847+05:30  INFO 21776 --- [CheckrApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T18:27:55.199+05:30  INFO 21776 --- [CheckrApplication] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-26T18:27:56.346+05:30  INFO 21776 --- [CheckrApplication] [main] c.e.C.r.PasswordResetTokenRepositoryTest : Started PasswordResetTokenRepositoryTest in 10.693 seconds (process running for 13.891)
+2024-12-26T18:27:58.245+05:30  INFO 21776 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T18:28:12.314+05:30  INFO 24880 --- [CheckrApplication] [main] c.e.C.repository.TokenRepositoryTest     : Starting TokenRepositoryTest using Java 23.0.1 with PID 24880 (started by Admin in C:\Web-projects\CheckrApplication)
+2024-12-26T18:28:12.318+05:30  INFO 24880 --- [CheckrApplication] [main] c.e.C.repository.TokenRepositoryTest     : No active profile set, falling back to 1 default profile: "default"
+2024-12-26T18:28:13.583+05:30  INFO 24880 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T18:28:13.860+05:30  INFO 24880 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 256 ms. Found 7 JPA repository interfaces.
+2024-12-26T18:28:14.021+05:30  INFO 24880 --- [CheckrApplication] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-12-26T18:28:14.525+05:30  INFO 24880 --- [CheckrApplication] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:3d6eb8d1-2993-40b8-9541-d751a58ebbdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-26T18:28:15.493+05:30  INFO 24880 --- [CheckrApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-26T18:28:15.644+05:30  INFO 24880 --- [CheckrApplication] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-26T18:28:15.749+05:30  INFO 24880 --- [CheckrApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-26T18:28:16.537+05:30  INFO 24880 --- [CheckrApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T18:28:19.125+05:30  INFO 24880 --- [CheckrApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T18:28:20.116+05:30  INFO 24880 --- [CheckrApplication] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-26T18:28:21.369+05:30  INFO 24880 --- [CheckrApplication] [main] c.e.C.repository.TokenRepositoryTest     : Started TokenRepositoryTest in 10.241 seconds (process running for 13.336)
+2024-12-26T18:28:23.062+05:30  INFO 24880 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T19:12:13.512+05:30  INFO 22788 --- [CheckrApplication] [main] c.e.C.r.CandidateRepositoryTest          : Starting CandidateRepositoryTest using Java 23.0.1 with PID 22788 (started by Admin in C:\Web-projects\CheckrApplication)
+2024-12-26T19:12:13.521+05:30  INFO 22788 --- [CheckrApplication] [main] c.e.C.r.CandidateRepositoryTest          : The following 1 profile is active: "test"
+2024-12-26T19:12:16.219+05:30  INFO 22788 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26T19:12:16.455+05:30  INFO 22788 --- [CheckrApplication] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 220 ms. Found 7 JPA repository interfaces.
+2024-12-26T19:12:16.608+05:30  INFO 22788 --- [CheckrApplication] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-12-26T19:12:17.222+05:30  INFO 22788 --- [CheckrApplication] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:efab0472-b23b-4e95-985c-c68d097fb633;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-12-26T19:12:18.464+05:30  INFO 22788 --- [CheckrApplication] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-26T19:12:18.699+05:30  INFO 22788 --- [CheckrApplication] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-26T19:12:18.832+05:30  INFO 22788 --- [CheckrApplication] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-26T19:12:19.244+05:30  INFO 22788 --- [CheckrApplication] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26T19:12:19.378+05:30  WARN 22788 --- [CheckrApplication] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-26T19:12:23.308+05:30  INFO 22788 --- [CheckrApplication] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26T19:12:25.444+05:30  INFO 22788 --- [CheckrApplication] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-26T19:12:27.407+05:30  INFO 22788 --- [CheckrApplication] [main] c.e.C.r.CandidateRepositoryTest          : Started CandidateRepositoryTest in 16.172 seconds (process running for 22.994)
+2024-12-26T19:12:29.134+05:30  INFO 22788 --- [CheckrApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

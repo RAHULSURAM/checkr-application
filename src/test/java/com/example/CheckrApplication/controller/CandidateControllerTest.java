@@ -13,8 +13,10 @@ import org.springframework.data.domain.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -144,5 +146,83 @@ class CandidateControllerTest {
         assertNotNull(responseBody);
         assertEquals(apiResponse.isSuccess(), responseBody.isSuccess());
         verify(candidateService, times(1)).engageCandidate(1L);
+    }
+
+    @Test
+    void exportCandidates_Success() {
+        // Arrange
+        LocalDate fromDate = LocalDate.now().minusDays(30);
+        LocalDate toDate = LocalDate.now();
+        doNothing().when(candidateService).exportCandidatesPDF(fromDate, toDate);
+
+        // Act
+        ResponseEntity<?> response = candidateController.exportCandidates(fromDate, toDate);
+
+        // Assert
+        assertEquals(200, response.getStatusCodeValue());
+        @SuppressWarnings("unchecked")
+        Map<String, String> responseBody = (Map<String, String>) response.getBody();
+        assertNotNull(responseBody);
+        assertEquals("Report has been generated and sent to your email", responseBody.get("message"));
+        verify(candidateService, times(1)).exportCandidatesPDF(fromDate, toDate);
+    }
+
+    @Test
+    void exportCandidates_Failure() {
+        // Arrange
+        LocalDate fromDate = LocalDate.now().minusDays(30);
+        LocalDate toDate = LocalDate.now();
+        String errorMessage = "Failed to generate PDF";
+        doThrow(new RuntimeException(errorMessage))
+            .when(candidateService)
+            .exportCandidatesPDF(fromDate, toDate);
+
+        // Act
+        ResponseEntity<?> response = candidateController.exportCandidates(fromDate, toDate);
+
+        // Assert
+        assertEquals(500, response.getStatusCodeValue());
+        @SuppressWarnings("unchecked")
+        Map<String, String> responseBody = (Map<String, String>) response.getBody();
+        assertNotNull(responseBody);
+        assertEquals("Failed to generate and send report: " + errorMessage, responseBody.get("error"));
+        verify(candidateService, times(1)).exportCandidatesPDF(fromDate, toDate);
+    }
+
+    @Test
+    void getAdverseActions_Success() {
+        // Arrange
+        int page = 0;
+        int size = 10;
+        Page<AdverseActionResponseDTO> adverseActionsPage = new PageImpl<>(Arrays.asList(
+            new AdverseActionResponseDTO()
+        ));
+        when(candidateService.getAdverseActions(page, size)).thenReturn(adverseActionsPage);
+
+        // Act
+        ResponseEntity<Page<AdverseActionResponseDTO>> response = candidateController.getAdverseActions(page, size);
+
+        // Assert
+        assertEquals(200, response.getStatusCodeValue());
+        assertNotNull(response.getBody());
+        assertEquals(1, response.getBody().getContent().size());
+        verify(candidateService, times(1)).getAdverseActions(page, size);
+    }
+
+    @Test
+    void getAdverseActions_Failure() {
+        // Arrange
+        int page = 0;
+        int size = 10;
+        String errorMessage = "Failed to fetch adverse actions";
+        when(candidateService.getAdverseActions(page, size))
+            .thenThrow(new RuntimeException(errorMessage));
+
+        // Act & Assert
+        RuntimeException exception = assertThrows(RuntimeException.class, () ->
+            candidateController.getAdverseActions(page, size)
+        );
+        assertEquals("Failed to fetch adverse actions", exception.getMessage());
+        verify(candidateService, times(1)).getAdverseActions(page, size);
     }
 }

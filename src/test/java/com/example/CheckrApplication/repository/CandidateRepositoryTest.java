@@ -16,6 +16,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -87,5 +88,71 @@ class CandidateRepositoryTest {
         Specification<CandidateDAO> spec = (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("status"), Status.CONSIDER);
         Iterable<CandidateDAO> results = candidateRepository.findAll(spec);
         assertThat(results).isEmpty();
+    }
+
+    @Test
+    void findByCreatedAtBetween_ShouldReturnCandidatesInDateRange() {
+        // Arrange
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime fromDate = now.minusDays(1);
+        LocalDateTime toDate = now.plusDays(1);
+
+        CandidateDAO candidate2 = new CandidateDAO();
+        candidate2.setName("John Smith");
+        candidate2.setEmail("john@example.com");
+        candidate2.setDateOfBirth(LocalDate.of(1992, 2, 2));
+        candidate2.setPhone("987-654-3210");
+        candidate2.setZipcode("10002");
+        candidate2.setSocialSecurity("987-65-4321");
+        candidate2.setDriversLicense("D7654321");
+        candidate2.setCreatedAt(now);
+        candidate2.setLocation("Los Angeles");
+        candidate2.setStatus(Status.CLEAR);
+        candidate2.setAdjudication(Adjudication.ENGAGED);
+        candidateRepository.save(candidate2);
+
+        // Act
+        List<CandidateDAO> candidates = candidateRepository.findByCreatedAtBetween(fromDate, toDate);
+
+        // Assert
+        assertThat(candidates).isNotNull();
+        assertThat(candidates).hasSize(2);
+        assertThat(candidates).extracting(CandidateDAO::getCreatedAt)
+            .allSatisfy(createdAt -> {
+                assertThat(createdAt).isAfterOrEqualTo(fromDate);
+                assertThat(createdAt).isBeforeOrEqualTo(toDate);
+            });
+    }
+
+    @Test
+    void findByCreatedAtBetween_ShouldReturnEmptyListWhenNoMatchesFound() {
+        // Arrange
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime fromDate = now.plusDays(1);
+        LocalDateTime toDate = now.plusDays(2);
+
+        // Act
+        List<CandidateDAO> candidates = candidateRepository.findByCreatedAtBetween(fromDate, toDate);
+
+        // Assert
+        assertThat(candidates).isNotNull();
+        assertThat(candidates).isEmpty();
+    }
+
+    @Test
+    void findByCreatedAtBetween_ShouldHandleSameDayRange() {
+        // Arrange
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime startOfDay = now.toLocalDate().atStartOfDay();
+        LocalDateTime endOfDay = now.toLocalDate().atTime(23, 59, 59);
+
+        // Act
+        List<CandidateDAO> candidates = candidateRepository.findByCreatedAtBetween(startOfDay, endOfDay);
+
+        // Assert
+        assertThat(candidates).isNotNull();
+        assertThat(candidates).hasSize(1);
+        assertThat(candidates.get(0).getCreatedAt().toLocalDate())
+            .isEqualTo(now.toLocalDate());
     }
 }
