@@ -2,6 +2,7 @@ package com.example.CheckrApplication.service;
 
 import com.example.CheckrApplication.DAO.UserDAO;
 import com.example.CheckrApplication.DTO.*;
+import com.example.CheckrApplication.JPARepository.TokenRepository;
 import com.example.CheckrApplication.JPARepository.UserRepository;
 import com.example.CheckrApplication.exception.BadRequestException;
 import com.example.CheckrApplication.exception.InvalidCredentialsException;
@@ -13,12 +14,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,6 +36,9 @@ class AuthenticationServiceTest {
 
     @Mock
     private UserRepository userRepository;
+
+    @Mock
+    private TokenRepository tokenRepository;
 
     @Mock
     private JwtTokenProvider tokenProvider;
@@ -122,6 +126,8 @@ class AuthenticationServiceTest {
         when(authentication.isAuthenticated()).thenReturn(true);
         when(tokenProvider.generateToken("test@example.com")).thenReturn("fake-jwt-token");
         when(userRepository.findByEmail("test@example.com")).thenReturn(Optional.of(userDAO));
+        when(tokenRepository.findAllTokenByUser(anyLong())).thenReturn(new ArrayList<>());
+        when(tokenRepository.saveAll(anyList())).thenReturn(new ArrayList<>());
 
 // Act
         SigninResponseDTO response = authenticationService.authenticateUser(signinRequestDTO);
@@ -133,6 +139,7 @@ class AuthenticationServiceTest {
         verify(authenticationManager, times(1)).authenticate(any(UsernamePasswordAuthenticationToken.class));
         verify(tokenProvider, times(1)).generateToken("test@example.com");
         verify(userRepository, times(1)).findByEmail("test@example.com");
+        verify(tokenRepository, times(1)).findAllTokenByUser(anyLong());
     }
 
     @Test
